@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ts3audiobot:
+    image: ancieque/ts3audiobot
+    ports:
+      - "58913:58913"
+    volumes:
+      - ./config:/app/data
+    links:
+      - neteasecloudmusicapi
+  neteasecloudmusicapi:
+    image: binaryify/netease_cloud_music_api
+    ports:
+    - "3000:3000"
